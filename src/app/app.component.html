@@ -1,5 +1,5 @@
 <app-header />
 
-<app-user-input></app-user-input>
+<app-user-input (annualData)="handleAnnualData($event)" />
 
-<app-investment-result></app-investment-result>
+<app-investment-result [annualData]="annualData" />

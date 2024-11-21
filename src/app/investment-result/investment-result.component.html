@@ -1,4 +1,4 @@
-@if(calculate) {
+@if(annualData.length) {
 <table>
   <thead>
     <tr>
@@ -10,15 +10,16 @@
     </tr>
   </thead>
   <tbody>
-    <!-- @for(){ -->
+    @for(annual of annualData; track annual.year){
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <!-- 10000 100 6 12 -->
+      <th>{{ annual.year }}</th>
+      <th>{{ annual.valueEndOfYear | currency }}</th>
+      <th>{{ annual.interest | currency }}</th>
+      <th>{{ annual.totalInterest | currency }}</th>
+      <th>{{ annual.totalAmountInvested | currency }}</th>
     </tr>
-    <!-- } -->
+    }
   </tbody>
 </table>
 } @else {

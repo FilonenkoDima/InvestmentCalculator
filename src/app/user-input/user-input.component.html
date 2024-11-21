@@ -5,7 +5,7 @@
       type="number"
       id="initial-investment"
       name="initial-investment"
-      [(ngModel)]="initialInvestment"
+      [(ngModel)]="userInput.initialInvestment"
     />
   </p>
 
@@ -15,7 +15,7 @@
       type="number"
       id="annual-investment"
       name="annual-investment"
-      [(ngModel)]="annualInvestment"
+      [(ngModel)]="userInput.annualInvestment"
     />
   </p>
 
@@ -25,13 +25,18 @@
       type="number"
       id="expected-return"
       name="expected-return"
-      [(ngModel)]="expectedReturn"
+      [(ngModel)]="userInput.expectedReturn"
     />
   </p>
 
   <p class="input-group">
     <label for="duration">Duration</label>
-    <input type="number" id="duration" name="duration" [(ngModel)]="duration" />
+    <input
+      type="number"
+      id="duration"
+      name="duration"
+      [(ngModel)]="userInput.duration"
+    />
   </p>
 
   <button type="submit">calculate</button>
