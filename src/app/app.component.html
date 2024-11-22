@@ -1,5 +1,5 @@
 <app-header />
 
-<app-user-input (annualData)="handleAnnualData($event)" />
+<app-user-input (calculate)="handleUserInput($event)" />
 
-<app-investment-result [annualData]="annualData" />
+<app-investment-result [userInput]="userInputModel" />
