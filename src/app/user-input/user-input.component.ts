@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { UserInputModel } from '../userInput.model';
@@ -21,11 +21,8 @@ export class UserInputComponent {
 
   constructor(private investmentService: InvestmentService) {}
 
-  // calculate = output<UserInputModel>();
-
   onSubmit() {
     const results = this.userInput();
     this.investmentService.calculateInvestmentResults(results);
-    // this.calculate.emit(results);
   }
 }
