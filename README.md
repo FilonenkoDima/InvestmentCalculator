@@ -1,27 +1,65 @@
-# InvestmentCalculator
+# Investment Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+## About the Project
 
-## Development server
+The **Investment Calculator** is a web application designed to simplify financial planning. It helps users calculate potential investment returns based on principal amount, interest rate, and investment duration.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Demo
 
-## Code scaffolding
+![](demo.gif)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/FilonenkoDima/InvestmentCalculator.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd InvestmentCalculator
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+### Running the Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run the application in development mode:
 
-## Running end-to-end tests
+```bash
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+or
 
-## Further help
+```bash
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Then open your browser and navigate to `http://localhost:4200/`.
+
+## Project Structure
+
+Here’s an overview of the project structure:
+
+```
+InvestmentCalculator/
+├── src/
+│   ├── app/
+│   │   ├── header/              # Header components
+│   │   ├── investment-result/   # Displays calculated results
+│   │   ├── user-input/          # Form for user data input
+│   │   ├── app.module.ts        # Main Angular module
+│   │   └── app.component.ts     # Root component of the application
+│   ├── main.ts                  # Entry point for Angular application
+│   └── index.html               # Application's base HTML file
+└── angular.json                 # Angular CLI configuration file
+
+```
+
+## Feedback
+
+Feel free to open an issue or submit a pull request. Contributions are welcome!
