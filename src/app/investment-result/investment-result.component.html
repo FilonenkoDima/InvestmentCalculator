@@ -1,4 +1,4 @@
-@if(annualData) {
+@if(annualData()) {
 <table>
   <thead>
     <tr>
@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    @for(annual of annualData; track annual.year){
+    @for(annual of annualData(); track annual.year){
     <tr>
       <!-- 10000 100 6 12 -->
       <th>{{ annual.year }}</th>
