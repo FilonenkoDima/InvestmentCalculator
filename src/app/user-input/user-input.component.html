@@ -1,43 +1,47 @@
 <form (ngSubmit)="onSubmit()">
-  <p class="input-group">
-    <label for="initial-investment">Initial Investment</label>
-    <input
-      type="number"
-      id="initial-investment"
-      name="initial-investment"
-      [(ngModel)]="userInput.initialInvestment"
-    />
-  </p>
+  <div class="input-group">
+    <p>
+      <label for="initial-investment">Initial Investment</label>
+      <input
+        type="number"
+        id="initial-investment"
+        name="initial-investment"
+        [(ngModel)]="userInput.initialInvestment"
+      />
+    </p>
 
-  <p class="input-group">
-    <label for="annual-investment">Annual Investment</label>
-    <input
-      type="number"
-      id="annual-investment"
-      name="annual-investment"
-      [(ngModel)]="userInput.annualInvestment"
-    />
-  </p>
+    <p>
+      <label for="annual-investment">Annual Investment</label>
+      <input
+        type="number"
+        id="annual-investment"
+        name="annual-investment"
+        [(ngModel)]="userInput.annualInvestment"
+      />
+    </p>
+  </div>
 
-  <p class="input-group">
-    <label for="expected-return">Expected Return</label>
-    <input
-      type="number"
-      id="expected-return"
-      name="expected-return"
-      [(ngModel)]="userInput.expectedReturn"
-    />
-  </p>
+  <div class="input-group">
+    <p>
+      <label for="expected-return">Expected Return</label>
+      <input
+        type="number"
+        id="expected-return"
+        name="expected-return"
+        [(ngModel)]="userInput.expectedReturn"
+      />
+    </p>
 
-  <p class="input-group">
-    <label for="duration">Duration</label>
-    <input
-      type="number"
-      id="duration"
-      name="duration"
-      [(ngModel)]="userInput.duration"
-    />
-  </p>
+    <p>
+      <label for="duration">Duration</label>
+      <input
+        type="number"
+        id="duration"
+        name="duration"
+        [(ngModel)]="userInput.duration"
+      />
+    </p>
+  </div>
 
   <button type="submit">calculate</button>
 </form>
