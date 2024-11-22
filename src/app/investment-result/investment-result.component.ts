@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
@@ -12,40 +12,40 @@ import { UserInputModel } from '../userInput.model';
   styleUrl: './investment-result.component.css',
 })
 export class InvestmentResultComponent {
-  calculate: boolean = false;
-  @Input() userInput: UserInputModel = {
-    annualInvestment: 0,
-    duration: 0,
-    expectedReturn: 0,
-    initialInvestment: 0,
-  };
+  userInput = input<UserInputModel | undefined>();
 
   get annualData() {
     return this.calculateInvestmentResults();
   }
 
   calculateInvestmentResults() {
-    const annualData = [];
-    let investmentValue = this.userInput.initialInvestment;
+    const userInputValue = this.userInput();
 
-    for (let i = 0; i < this.userInput.duration; i++) {
+    if (!userInputValue) {
+      return [];
+    }
+
+    const annualData = [];
+    let investmentValue = userInputValue.initialInvestment;
+
+    for (let i = 0; i < userInputValue.duration; i++) {
       const year = i + 1;
       const interestEarnedInYear =
-        investmentValue * (this.userInput.expectedReturn / 100);
-      investmentValue += interestEarnedInYear + this.userInput.annualInvestment;
+        investmentValue * (userInputValue.expectedReturn / 100);
+      investmentValue += interestEarnedInYear + userInputValue.annualInvestment;
       const totalInterest =
         investmentValue -
-        this.userInput.annualInvestment * year -
-        this.userInput.initialInvestment;
+        userInputValue.annualInvestment * year -
+        userInputValue.initialInvestment;
       annualData.push({
         year: year,
         interest: interestEarnedInYear,
         valueEndOfYear: investmentValue,
-        annualInvestment: this.userInput.annualInvestment,
+        annualInvestment: userInputValue.annualInvestment,
         totalInterest: totalInterest,
         totalAmountInvested:
-          this.userInput.initialInvestment +
-          this.userInput.annualInvestment * year,
+          userInputValue.initialInvestment +
+          userInputValue.annualInvestment * year,
       });
     }
 
